@@ -49,3 +49,33 @@ This project focuses on:
 ```bash
 git clone https://github.com/stephen-abikoye/terraform-aws-ec2-ssm-s3-automation.git
 cd terraform-aws-ec2-ssm-s3-automation
+```
+
+### 2. Initialize Terraform
+```bash
+terraform init
+```
+
+### 3. Deploy infrastructure
+```bash
+terraform apply
+```
+Confirm with yes when prompted.
+
+## Verification
+### Check EC2 access via SSM
+```bash
+aws ssm start-session --target <instance-id>
+```
+
+### Verify cloud-init execution
+```bash
+cat /var/log/user-data.log
+```
+
+### Verify S3 object creation
+```bash
+aws s3 ls s3://<bucket-name>/
+```
+You should see:
+hello-from-ec2.txt
