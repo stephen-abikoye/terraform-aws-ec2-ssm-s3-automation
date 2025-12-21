@@ -1,0 +1,14 @@
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# AWS / credentials
+.aws/
+.env
+
+# OS / editor
+.DS_Store
+*.log
